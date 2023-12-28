@@ -1,120 +1,45 @@
 <!DOCTYPE html>
-<html lang="en">
-    <style>
-        /* CSS styles for page design */
-body {
-    font-family: Arial, sans-serif;
-    text-align: center;
-    margin: 20px;
-    background: #333;
-}
-
-h1 {
-    color: #333;
-}
-
-form {
-    margin-bottom: 20px;
-}
-
-table {
-    width: 80%;
-    margin: 0 auto;
-    border-collapse: collapse;
-}
-
-th, td {
-    border: 1px solid #ccc;
-    padding: 8px;
-    color: white;
-}
-input{
-    width: 350px;
-    border-radius: 10px;
-    padding: 6px;
-    outline: none;
-    border: 1px solid;
-}
-button {
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    padding: 8px 16px;
-    cursor: pointer;
-    border-radius: 7px;
-}
-
-.completed {
-    background-color: #4CAF50; 
-    color: white;
-}
-
-.start-target{
-    text-align: left;
-    font-size: 19px;
-    font-weight: 600;
-    color: rgb(0, 0, 0);
-    margin-left: 160px;
-    margin-top: -10px;
-}
-
-.str{
-    color: rgb(13, 217, 203);
-
-}
-.med{
-    text-align: left;
-    font-size: 19px;
-    font-weight: 600;
-    color: rgb(255, 0, 0);
-    margin-left: 160px;
-    margin-top: -10px;
-}
-.fin{
-    text-align: left;
-    font-size: 19px;
-    font-weight: 600;
-    color: rgb(0, 255, 17);
-    margin-left: 160px;
-    margin-top: -10px;
-}
-    </style>
+<html lang="fa">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>6-Month Goal Program</title>
+    <title>چت روبات</title>
 </head>
 <body>
-    <h1>6-Month Goal Program</h1><br>
+    <h1>چت روبات</h1>
+    <div id="chat">
+        <input type="text" id="userInput" placeholder="سوال خود را اینجا بنویسید...">
+        <button onclick="getResponse()">ارسال</button>
+        <ul id="chatList">
+        </ul>
+    </div>
 
-   <p class="start-target">Start Target : <span class="str">2023/9/1</span></p>
+    <script>
+        function getResponse() {
+            var userText = document.getElementById('userInput').value;
+            var chatList = document.getElementById('chatList');
+            var userQuestion = document.createElement('li');
+            userQuestion.textContent = 'شما: ' + userText;
+            chatList.appendChild(userQuestion);
+            
+            var botAnswer = document.createElement('li');
+            
+            // اینجا باید لاجیک برای تعیین پاسخ روبات اضافه شود
+            // مثال ساده:
+            if (userText.includes('hallo')) {
+                botAnswer.textContent = 'hallo wie gehts als gut?';
+            } else if (userText.includes('چطوری؟')) {
+                botAnswer.textContent = 'روبات: من خوبم، ممنون! شما چطور هستید؟';
+            } else {
+                botAnswer.textContent = 'روبات: متاسفم، من نمی‌فهمم.';
+            }
 
-   <p class="med">Bettwen : <span class="str">2023/11/15</span></p>
+            chatList.appendChild(botAnswer);
 
-   <p class="fin">Finish : <span class="str">2024/2/15</span></p>
-
-    <!-- Form to add a new goal -->
-    <form id="goal-form">
-        <input type="text" id="goal" placeholder="Enter your goal" required>
-        <button type="submit">Add Goal</button>
-    </form>
-
-    <!-- Table to display goals -->
-    <table id="goal-list">
-        <thead>
-            <tr>
-                <th>Number</th>
-                <th>Goal</th>
-                <th>Actions</th>
-                <th>Actions</th>
-            </tr>
-        </thead>
-        <tbody>
-            <!-- Goals will be dynamically added here -->
-        </tbody>
-    </table>
-
-    <script src="script.js"></script>
+            // پاک کردن متن وارد شده
+            document.getElementById('userInput').value = '';
+        }
+    </script>
 </body>
 </html>
