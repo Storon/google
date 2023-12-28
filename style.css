@@ -1,77 +1,56 @@
-/* CSS styles for page design */
 body {
-    font-family: Arial, sans-serif;
-    text-align: center;
-    margin: 20px;
-    background: #333;
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f7f7f7;
 }
 
 h1 {
-    color: #333;
+  text-align: center;
+  color: #333;
 }
 
-form {
-    margin-bottom: 20px;
+#chat {
+  width: 300px;
+  margin: 20px auto;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  overflow: hidden;
+  background-color: #fff;
 }
 
-table {
-    width: 80%;
-    margin: 0 auto;
-    border-collapse: collapse;
+#userInput {
+  width: calc(100% - 60px);
+  padding: 15px;
+  border: none;
+  border-top: 1px solid #eee;
+  box-sizing: border-box;
 }
 
-th, td {
-    border: 1px solid #ccc;
-    padding: 8px;
-    color: white;
-}
-input{
-    width: 350px;
-    border-radius: 10px;
-    padding: 6px;
-    outline: none;
-    border: 1px solid;
-}
 button {
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    padding: 8px 16px;
-    cursor: pointer;
-    border-radius: 7px;
+  width: 60px;
+  border: none;
+  background-color: #5cb85c;
+  color: white;
+  padding: 15px;
+  cursor: pointer;
 }
 
-.completed {
-    background-color: #4CAF50; 
-    color: white;
+button:hover {
+  background-color: #4cae4c;
 }
 
-.start-target{
-    text-align: left;
-    font-size: 19px;
-    font-weight: 600;
-    color: rgb(0, 0, 0);
-    margin-left: 160px;
-    margin-top: -10px;
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
-.str{
-    color: rgb(13, 217, 203);
+li {
+  padding: 10px;
+  border-bottom: 1px solid #eee;
+}
 
-}
-.med{
-    text-align: left;
-    font-size: 19px;
-    font-weight: 600;
-    color: rgb(255, 0, 0);
-    margin-left: 160px;
-    margin-top: -10px;
-}
-.fin{
-    text-align: left;
-    font-size: 19px;
-    font-weight: 600;
-    color: rgb(0, 255, 17);
-    margin-left: 160px;
-    margin-top: -10px;
+li:last-child {
+  border-bottom: none;
 }
